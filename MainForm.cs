@@ -40,9 +40,12 @@ namespace Wake_on_LAN.Net
 
         private void dataGridView_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            dataGridView.Rows[e.RowIndex].Selected = true;
-            Console.WriteLine(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
-            _selectedMac = PcData.StrToMac(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+            if (e.RowIndex >= 0)
+            {
+                dataGridView.Rows[e.RowIndex].Selected = true;
+                Console.WriteLine(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+                _selectedMac = PcData.StrToMac(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+            }
         }
 
         private void button_Click(object sender, EventArgs e)
