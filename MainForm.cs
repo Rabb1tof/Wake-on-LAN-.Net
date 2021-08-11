@@ -19,6 +19,7 @@ namespace Wake_on_LAN.Net
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
+            
             using (var sr = new StreamReader(Path, Encoding.Default))
             {
                 string line;
