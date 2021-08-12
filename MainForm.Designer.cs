@@ -37,9 +37,10 @@ namespace Wake_on_LAN.Net
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.NameOfPc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MACofPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WakeButton = new System.Windows.Forms.Button();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WakeButton = new System.Windows.Forms.Button();
             this.buttonAddRow = new System.Windows.Forms.Button();
+            this.buttonEditMode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@ namespace Wake_on_LAN.Net
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridView.Location = new System.Drawing.Point(-1, -1);
             this.dataGridView.Name = "dataGridView";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -104,6 +105,11 @@ namespace Wake_on_LAN.Net
             this.MACofPC.HeaderText = "PC MAC-Addres";
             this.MACofPC.Name = "MACofPC";
             // 
+            // Note
+            // 
+            this.Note.HeaderText = "Note";
+            this.Note.Name = "Note";
+            // 
             // WakeButton
             // 
             this.WakeButton.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,11 +121,6 @@ namespace Wake_on_LAN.Net
             this.WakeButton.UseVisualStyleBackColor = true;
             this.WakeButton.Click += new System.EventHandler(this.button_Click);
             // 
-            // Note
-            // 
-            this.Note.HeaderText = "Note";
-            this.Note.Name = "Note";
-            // 
             // buttonAddRow
             // 
             this.buttonAddRow.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,6 +130,17 @@ namespace Wake_on_LAN.Net
             this.buttonAddRow.TabIndex = 2;
             this.buttonAddRow.Text = "Add PC";
             this.buttonAddRow.UseVisualStyleBackColor = true;
+            this.buttonAddRow.Click += new System.EventHandler(this.buttonAddRow_Click);
+            // 
+            // buttonEditMode
+            // 
+            this.buttonEditMode.Font = new System.Drawing.Font("Maiandra GD", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditMode.Location = new System.Drawing.Point(12, 134);
+            this.buttonEditMode.Name = "buttonEditMode";
+            this.buttonEditMode.Size = new System.Drawing.Size(70, 19);
+            this.buttonEditMode.TabIndex = 3;
+            this.buttonEditMode.Text = "Edit Mode";
+            this.buttonEditMode.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -137,6 +149,7 @@ namespace Wake_on_LAN.Net
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(348, 161);
+            this.Controls.Add(this.buttonEditMode);
             this.Controls.Add(this.buttonAddRow);
             this.Controls.Add(this.WakeButton);
             this.Controls.Add(this.dataGridView);
@@ -158,6 +171,7 @@ namespace Wake_on_LAN.Net
         private System.Windows.Forms.Button WakeButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.Button buttonAddRow;
+        private System.Windows.Forms.Button buttonEditMode;
     }
 }
 

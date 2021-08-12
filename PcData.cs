@@ -10,12 +10,14 @@ namespace Wake_on_LAN.Net
         public string Mac;
         public byte[] MacBytes;
         public string Name;
+        public string Note;
 
-        public PcData(string name, string mac, byte[] macBytes)
+        public PcData(string name, string mac, byte[] macBytes, string note)
         {
             Name = name;
             Mac = mac;
             MacBytes = macBytes;
+            Note = note;
         }
 
         public static byte[] StrToMac(string s)
@@ -36,6 +38,9 @@ namespace Wake_on_LAN.Net
 
         public static void WakeUp(byte[] mac)
         {
+            if (mac == null)
+                return;
+
             using (var udpClient = new UdpClient())
             {
                 udpClient.Send(mac, mac.Length, new IPEndPoint(IPAddress.Broadcast, 9));
