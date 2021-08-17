@@ -98,7 +98,7 @@ namespace Wake_on_LAN.Net
             this.button_add.TabIndex = 2;
             this.button_add.Text = "Done";
             this.button_add.UseVisualStyleBackColor = true;
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            this.button_add.Click += new System.EventHandler(this.Button_add_Click);
             // 
             // AddPcForm
             // 
