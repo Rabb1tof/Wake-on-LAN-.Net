@@ -30,8 +30,8 @@ namespace Wake_on_LAN.Net
                 arr.Add(0xff);
 
             for (var j = 0; j < 16; j++)
-            for (var i = 0; i < 6; i++)
-                arr.Add(Convert.ToByte(macs[i], 16));
+                for (var i = 0; i < 6; i++)
+                    arr.Add(Convert.ToByte(macs[i], 16));
 
             return arr.ToArray();
         }
