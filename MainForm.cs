@@ -18,7 +18,7 @@ namespace Wake_on_LAN.Net
             InitializeComponent();
         }
 
-        public static void AddRow(object[] row)
+        public void AddRow(object[] row)
         {
             if (row != null)
                 dataGridView.Rows.Add(row);
@@ -74,7 +74,7 @@ namespace Wake_on_LAN.Net
 
         private void buttonAddRow_Click(object sender, EventArgs e)
         {
-            Form form = new AddPcForm();
+            Form form = new AddPcForm(this);
             form.Show();
         }
     }

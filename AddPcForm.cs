@@ -12,9 +12,11 @@ namespace Wake_on_LAN.Net
 {
     public partial class AddPcForm : Form
     {
-        public AddPcForm()
+        private MainForm _mainForm;
+        public AddPcForm(MainForm mainForm)
         {
             InitializeComponent();
+            _mainForm = mainForm;
         }
 
         private void AddPcForm_Load(object sender, EventArgs e)
@@ -25,7 +27,9 @@ namespace Wake_on_LAN.Net
         private void button_add_Click(object sender, EventArgs e)
         {
             object[] row = { textBoxName.Text, textBoxMac.Text, textBoxNote.Text };
-            MainForm.AddRow(row);
+            _mainForm.AddRow(row);
+            _mainForm.Show();
+            this.Close();
         }
     }
 }
